@@ -4,6 +4,8 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     /* display: flex; */
     /* flex-direction: row; */
     /* gap: 0.25rem; */
@@ -15,11 +17,13 @@
 
 .flex_main_output {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     width: 100%;
     margin: 0 auto;
     outline: 1px solid green;
     box-sizing: border-box;
     padding: 0.5rem;
-    height: 12.85rem;
+    /* height: 10rem; */
+    min-height: 12rem;
+    /* transition: 1s all; */
 }
