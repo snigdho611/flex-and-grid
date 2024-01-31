@@ -6,6 +6,7 @@ const Flex = () => {
   const [flexDirection, setFlexDirection] = useState({ flexDirection: "row" })
   const [flexWrap, setFlexWrap] = useState({ flexDirection: "row", flexWrap: "wrap" })
   const [flexFlow, setFlexFlow] = useState({ flexDirection: "row", flexWrap: "wrap" })
+  const [justifyContent, setJustifyContent] = useState({ flexDirection: "row", flexWrap: "wrap", justifyContent: "flex-start" })
 
   return (
     <div className="flex_main">
@@ -33,7 +34,7 @@ const Flex = () => {
           value="row-reverse"
           checked={flexDirection.flexDirection === "row-reverse"}
           onChange={(e) => setFlexDirection((prevState) => ({ ...prevState, flexDirection: e.target.value }))}
-        /> row-reverse;k
+        /> row-reverse;
         <input
           type="radio"
           name="flex-direction-direction"
@@ -42,23 +43,15 @@ const Flex = () => {
           onChange={(e) => setFlexDirection((prevState) => ({ ...prevState, flexDirection: e.target.value }))}
         /> column-reverse;
       </div>
-      <div style={{
-        display: "flex",
-        flexDirection: "column",
-        outline: "1px solid lime",
-        fontSize: "0.75rem",
-        boxSizing: "border-box",
-        padding: "0.5rem",
-      }}>
+      <div className="flex_main_codeblock">
         <span>&#123;</span>
         <span>
-
-          <span style={{ fontStyle: "italic", fontWeight: "bold" }}>&nbsp;&nbsp;&nbsp;&nbsp;display: </span>
-          <span style={{ color: "cyan" }}>flex</span>;
+          <span className="flex_main_codeblock_property">&nbsp;&nbsp;&nbsp;&nbsp;display: </span>
+          <span className="flex_main_codeblock_value">flex</span>;
         </span>
         <span>
-          <span style={{ fontStyle: "italic", fontWeight: "bold" }}>&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: </span>
-          <span style={{ color: "cyan" }}>{flexDirection.flexDirection}</span>;
+          <span className="flex_main_codeblock_property">&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: </span>
+          <span className="flex_main_codeblock_value">{flexDirection.flexDirection}</span>;
         </span>
         <span>&#125;</span>
       </div>
@@ -71,6 +64,7 @@ const Flex = () => {
         <Rectangle width={"200px"} height={"35px"} text={1} />
         <Rectangle width={"200px"} height={"35px"} text={2} />
         <Rectangle width={"200px"} height={"35px"} text={3} />
+        <Rectangle width={"200px"} height={"35px"} text={4} />
       </div>
 
 
@@ -135,28 +129,19 @@ const Flex = () => {
           onChange={(e) => setFlexWrap((prevState) => ({ ...prevState, flexDirection: e.target.value }))}
         /> column-reverse;
       </div>
-      <div style={{
-        display: "flex",
-        flexDirection: "column",
-        outline: "1px solid lime",
-        fontSize: "0.75rem",
-        boxSizing: "border-box",
-        padding: "0.5rem",
-        // width: "25%",
-        // whiteSpace: "balance"
-      }}>
+      <div className="flex_main_codeblock">
         <span>&#123;</span>
         <span>
-          <span style={{ fontStyle: "italic", fontWeight: "bold" }}>&nbsp;&nbsp;&nbsp;&nbsp;display: </span>
-          <span style={{ color: "cyan" }}>flex</span>;
+          <span className="flex_main_codeblock_property">&nbsp;&nbsp;&nbsp;&nbsp;display: </span>
+          <span className="flex_main_codeblock_value">flex</span>;
         </span>
         <span>
-          <span style={{ fontStyle: "italic", fontWeight: "bold" }}>&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: </span>
-          <span style={{ color: "cyan" }}>{flexWrap.flexDirection}</span>;
+          <span className="flex_main_codeblock_property">&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: </span>
+          <span className="flex_main_codeblock_value">{flexWrap.flexDirection}</span>;
         </span>
         <span>
-          <span style={{ fontStyle: "italic", fontWeight: "bold" }}>&nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: </span>
-          <span style={{ color: "cyan" }}>{flexWrap.flexDirection}</span>;
+          <span className="flex_main_codeblock_property">&nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: </span>
+          <span className="flex_main_codeblock_value">{flexWrap.flexDirection}</span>;
         </span>
         <span>&#125;</span>
       </div>
@@ -176,7 +161,7 @@ const Flex = () => {
       </div>
 
       {/* FLEX FLOW */}
-      <h2 className="flex_main_header">Flex Wrap</h2>
+      <h2 className="flex_main_header">Flex Flow</h2>
       <div className="flex_main_input" style={{
         display: "flex",
       }}>
@@ -236,29 +221,16 @@ const Flex = () => {
           onChange={(e) => setFlexFlow((prevState) => ({ ...prevState, flexDirection: e.target.value }))}
         /> column-reverse;
       </div>
-      <div style={{
-        display: "flex",
-        flexDirection: "column",
-        outline: "1px solid lime",
-        fontSize: "0.75rem",
-        boxSizing: "border-box",
-        padding: "0.5rem",
-        // width: "25%",
-        // whiteSpace: "balance"
-      }}>
+      <div className="flex_main_codeblock">
         <span>&#123;</span>
         <span>
-          <span style={{ fontStyle: "italic", fontWeight: "bold" }}>&nbsp;&nbsp;&nbsp;&nbsp;display: </span>
-          <span style={{ color: "cyan" }}>flex</span>;
+          <span className="flex_main_codeblock_property">&nbsp;&nbsp;&nbsp;&nbsp;display: </span>
+          <span className="flex_main_codeblock_value">flex</span>;
         </span>
         <span>
-          <span style={{ fontStyle: "italic", fontWeight: "bold" }}>&nbsp;&nbsp;&nbsp;&nbsp;flex-flow: </span>
-          <span style={{ color: "cyan" }}>{`${flexFlow.flexDirection} ${flexFlow.flexWrap}`}</span>;
+          <span className="flex_main_codeblock_property">&nbsp;&nbsp;&nbsp;&nbsp;flex-flow: </span>
+          <span className="flex_main_codeblock_value">{`${flexFlow.flexDirection} ${flexFlow.flexWrap}`}</span>;
         </span>
-        {/* <span>
-          <span style={{ fontStyle: "italic", fontWeight: "bold" }}>&nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: </span>
-          <span style={{ color: "cyan" }}>{flexWrap.flexWrap}</span>;
-        </span> */}
         <span>&#125;</span>
       </div>
       <div
@@ -273,6 +245,144 @@ const Flex = () => {
         <Rectangle width={"200px"} height={"35px"} text={4} />
         <Rectangle width={"200px"} height={"35px"} text={5} />
         <Rectangle width={"200px"} height={"35px"} text={6} />
+      </div>
+
+      {/* JUSTIFY CONTENT */}
+      <h2 className="flex_main_header">Justify Content</h2>
+      {/* <div className="flex_main_input" style={{
+        display: "flex",
+      }}>
+        <span>Flex Wrap: </span>
+        <input
+          type="radio"
+          name="justify-content-wrap"
+          value={"wrap"}
+          checked={justifyContent.flexWrap === "wrap"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, flexWrap: e.target.value }))}
+        /> wrap;
+        <input
+          type="radio"
+          name="justify-content-wrap"
+          value={"nowrap"}
+          checked={justifyContent.flexWrap === "nowrap"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, flexWrap: e.target.value }))}
+        /> nowrap;
+        <input
+          type="radio"
+          name="justify-content-wrap"
+          value={"wrap-reverse"}
+          checked={justifyContent.flexWrap === "wrap-reverse"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, flexWrap: e.target.value }))}
+        /> wrap-reverse;
+      </div> */}
+      <div className="flex_main_input" style={{
+        display: "flex",
+        flexWrap: "wrap"
+      }}>
+        <span>Justify Content: </span>
+        <input
+          type="radio"
+          name="justify-content-justify-content"
+          value={"start"}
+          checked={justifyContent.justifyContent === "start"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+        /> start;
+        <input
+          type="radio"
+          name="justify-content-justify-content"
+          value={"end"}
+          checked={justifyContent.justifyContent === "end"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+        /> end;
+        <input
+          type="radio"
+          name="justify-content-justify-content"
+          value="flex-start"
+          checked={justifyContent.justifyContent === "flex-start"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+        /> flex-start;
+        <input
+          type="radio"
+          name="justify-content-justify-content"
+          value={"flex-end"}
+          checked={justifyContent.justifyContent === "flex-end"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+        /> flex-end;
+        <input
+          type="radio"
+          name="justify-content-justify-content"
+          value={"center"}
+          checked={justifyContent.justifyContent === "center"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+        /> center;
+        <input
+          type="radio"
+          name="justify-content-justify-content"
+          value={"left"}
+          checked={justifyContent.justifyContent === "left"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+        /> left;
+        <input
+          type="radio"
+          name="justify-content-justify-content"
+          value={"right"}
+          checked={justifyContent.justifyContent === "right"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+        /> right;
+        <input
+          type="radio"
+          name="justify-content-justify-content"
+          value={"space-between"}
+          checked={justifyContent.justifyContent === "space-between"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+        /> space-between;
+        <input
+          type="radio"
+          name="justify-content-justify-content"
+          value={"space-around"}
+          checked={justifyContent.justifyContent === "space-around"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+        /> space-around;
+        <input
+          type="radio"
+          name="justify-content-justify-content"
+          value={"space-evenly"}
+          checked={justifyContent.justifyContent === "space-evenly"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+        /> space-evenly;
+        <input
+          type="radio"
+          name="justify-content-justify-content"
+          value={"safe"}
+          checked={justifyContent.justifyContent === "safe"}
+          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+        /> safe;
+      </div>
+      <div className="flex_main_codeblock">
+        <span>&#123;</span>
+        <span>
+          <span className="flex_main_codeblock_property">&nbsp;&nbsp;&nbsp;&nbsp;display: </span>
+          <span className="flex_main_codeblock_value">flex</span>;
+        </span>
+        <span>
+          <span className="flex_main_codeblock_property">&nbsp;&nbsp;&nbsp;&nbsp;justify-content: </span>
+          <span className="flex_main_codeblock_value">{`${justifyContent.justifyContent}`}</span>;
+        </span>
+        <span>&#125;</span>
+      </div>
+      <div
+        className="flex_main_output"
+        style={{
+          // flexFlow: `${flexFlow.flexDirection} ${flexFlow.flexWrap}`
+          justifyContent: justifyContent.justifyContent
+        }}
+      >
+        <Rectangle width={"200px"} height={"35px"} text={1} />
+        <Rectangle width={"200px"} height={"35px"} text={2} />
+        <Rectangle width={"200px"} height={"35px"} text={3} />
+        <Rectangle width={"200px"} height={"35px"} text={4} />
+        {/* <Rectangle width={"200px"} height={"35px"} text={5} />
+        <Rectangle width={"200px"} height={"35px"} text={6} /> */}
       </div>
     </div>
   );

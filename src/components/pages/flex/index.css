@@ -6,13 +6,6 @@
     gap: 1.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* gap: 0.25rem; */
-    /* width: 50%; */
-    /* margin: 0 auto; */
-    /* flex-wrap: wrap; */
-    /* flex-grow: 1; */
 }
 
 .flex_main_output {
@@ -20,10 +13,29 @@
     gap: 1rem;
     width: 100%;
     margin: 0 auto;
-    outline: 1px solid green;
+    outline: 1px solid purple;
     box-sizing: border-box;
     padding: 0.5rem;
-    /* height: 10rem; */
+    background-image: linear-gradient(to right, #242424, #161616);
     min-height: 12rem;
-    /* transition: 1s all; */
+}
+
+.flex_main_codeblock {
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid lime;
+    background-color: #001328a5;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    color: #5ac6bf;
+}
+
+.flex_main_codeblock_property {
+    font-style: italic;
+    color: white;
+}
+
+.flex_main_codeblock_value {
+    color: cyan;
 }

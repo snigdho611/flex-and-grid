@@ -1,8 +1,6 @@
 .square {
-    /* height: 50px; */
-    /* width: 50px; */
     background-color: navy;
-    background-image: linear-gradient(to bottom, purple, violet);
+    background-image: linear-gradient(to right, purple, rgb(173, 80, 173));
     border-style: solid;
     border-width: 1px;
     border-color: cornflowerblue;
@@ -10,5 +8,4 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* flex-grow: 1; */
 }
