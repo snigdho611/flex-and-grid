@@ -61,10 +61,10 @@ const Flex = () => {
           flexDirection: flexDirection.flexDirection,
         }}
       >
-        <Rectangle width={"200px"} height={"35px"} text={1} />
-        <Rectangle width={"200px"} height={"35px"} text={2} />
-        <Rectangle width={"200px"} height={"35px"} text={3} />
-        <Rectangle width={"200px"} height={"35px"} text={4} />
+        {Array(4).fill(0).map((element, i) => {
+          return <Rectangle key={i} text={i + 1} />
+
+        })}
       </div>
 
 
@@ -152,12 +152,12 @@ const Flex = () => {
           flexWrap: flexWrap.flexWrap
         }}
       >
-        <Rectangle width={"200px"} height={"35px"} text={1} />
-        <Rectangle width={"200px"} height={"35px"} text={2} />
-        <Rectangle width={"200px"} height={"35px"} text={3} />
-        <Rectangle width={"200px"} height={"35px"} text={4} />
-        <Rectangle width={"200px"} height={"35px"} text={5} />
-        <Rectangle width={"200px"} height={"35px"} text={6} />
+        <Rectangle text={1} />
+        <Rectangle text={2} />
+        <Rectangle text={3} />
+        <Rectangle text={4} />
+        <Rectangle text={5} />
+        <Rectangle text={6} />
       </div>
 
       {/* FLEX FLOW */}
@@ -239,12 +239,12 @@ const Flex = () => {
           flexFlow: `${flexFlow.flexDirection} ${flexFlow.flexWrap}`
         }}
       >
-        <Rectangle width={"200px"} height={"35px"} text={1} />
-        <Rectangle width={"200px"} height={"35px"} text={2} />
-        <Rectangle width={"200px"} height={"35px"} text={3} />
-        <Rectangle width={"200px"} height={"35px"} text={4} />
-        <Rectangle width={"200px"} height={"35px"} text={5} />
-        <Rectangle width={"200px"} height={"35px"} text={6} />
+        <Rectangle text={1} />
+        <Rectangle text={2} />
+        <Rectangle text={3} />
+        <Rectangle text={4} />
+        <Rectangle text={5} />
+        <Rectangle text={6} />
       </div>
 
       {/* JUSTIFY CONTENT */}
@@ -280,83 +280,114 @@ const Flex = () => {
         flexWrap: "wrap"
       }}>
         <span>Justify Content: </span>
-        <input
-          type="radio"
-          name="justify-content-justify-content"
-          value={"start"}
-          checked={justifyContent.justifyContent === "start"}
-          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
-        /> start;
-        <input
-          type="radio"
-          name="justify-content-justify-content"
-          value={"end"}
-          checked={justifyContent.justifyContent === "end"}
-          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
-        /> end;
-        <input
-          type="radio"
-          name="justify-content-justify-content"
-          value="flex-start"
-          checked={justifyContent.justifyContent === "flex-start"}
-          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
-        /> flex-start;
-        <input
-          type="radio"
-          name="justify-content-justify-content"
-          value={"flex-end"}
-          checked={justifyContent.justifyContent === "flex-end"}
-          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
-        /> flex-end;
-        <input
-          type="radio"
-          name="justify-content-justify-content"
-          value={"center"}
-          checked={justifyContent.justifyContent === "center"}
-          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
-        /> center;
-        <input
-          type="radio"
-          name="justify-content-justify-content"
-          value={"left"}
-          checked={justifyContent.justifyContent === "left"}
-          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
-        /> left;
-        <input
-          type="radio"
-          name="justify-content-justify-content"
-          value={"right"}
-          checked={justifyContent.justifyContent === "right"}
-          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
-        /> right;
-        <input
-          type="radio"
-          name="justify-content-justify-content"
-          value={"space-between"}
-          checked={justifyContent.justifyContent === "space-between"}
-          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
-        /> space-between;
-        <input
-          type="radio"
-          name="justify-content-justify-content"
-          value={"space-around"}
-          checked={justifyContent.justifyContent === "space-around"}
-          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
-        /> space-around;
-        <input
-          type="radio"
-          name="justify-content-justify-content"
-          value={"space-evenly"}
-          checked={justifyContent.justifyContent === "space-evenly"}
-          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
-        /> space-evenly;
-        <input
+        <span style={{ display: "grid", gridTemplate: "1.5rem 1.5rem 1.5rem 1.5rem / 33% 33% 33%", width: "100%" }}>
+          <span>
+            <input
+              type="radio"
+              name="justify-content-justify-content"
+              value={"start"}
+              checked={justifyContent.justifyContent === "start"}
+              onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+            /> start;
+          </span>
+          <span>
+
+            <input
+              type="radio"
+              name="justify-content-justify-content"
+              value={"end"}
+              checked={justifyContent.justifyContent === "end"}
+              onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+            /> end;
+          </span>
+          <span>
+
+            <input
+              type="radio"
+              name="justify-content-justify-content"
+              value="flex-start"
+              checked={justifyContent.justifyContent === "flex-start"}
+              onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+            /> flex-start;
+          </span>
+          <span>
+
+            <input
+              type="radio"
+              name="justify-content-justify-content"
+              value={"flex-end"}
+              checked={justifyContent.justifyContent === "flex-end"}
+              onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+            /> flex-end;
+          </span>
+          <span>
+
+            <input
+              type="radio"
+              name="justify-content-justify-content"
+              value={"center"}
+              checked={justifyContent.justifyContent === "center"}
+              onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+            /> center;
+          </span>
+          <span>
+
+            <input
+              type="radio"
+              name="justify-content-justify-content"
+              value={"left"}
+              checked={justifyContent.justifyContent === "left"}
+              onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+            /> left;
+          </span>
+          <span>
+
+            <input
+              type="radio"
+              name="justify-content-justify-content"
+              value={"right"}
+              checked={justifyContent.justifyContent === "right"}
+              onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+            /> right;
+          </span>
+          <span>
+
+            <input
+              type="radio"
+              name="justify-content-justify-content"
+              value={"space-between"}
+              checked={justifyContent.justifyContent === "space-between"}
+              onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+            /> space-between;
+          </span>
+          <span>
+
+            <input
+              type="radio"
+              name="justify-content-justify-content"
+              value={"space-around"}
+              checked={justifyContent.justifyContent === "space-around"}
+              onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+            /> space-around;
+          </span>
+          <span>
+
+            <input
+              type="radio"
+              name="justify-content-justify-content"
+              value={"space-evenly"}
+              checked={justifyContent.justifyContent === "space-evenly"}
+              onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
+            /> space-evenly;
+          </span>
+        </span>
+        {/* <input
           type="radio"
           name="justify-content-justify-content"
           value={"safe"}
           checked={justifyContent.justifyContent === "safe"}
           onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, justifyContent: e.target.value }))}
-        /> safe;
+        /> safe; */}
       </div>
       <div className="flex_main_codeblock">
         <span>&#123;</span>
@@ -377,12 +408,12 @@ const Flex = () => {
           justifyContent: justifyContent.justifyContent
         }}
       >
-        <Rectangle width={"200px"} height={"35px"} text={1} />
-        <Rectangle width={"200px"} height={"35px"} text={2} />
-        <Rectangle width={"200px"} height={"35px"} text={3} />
-        <Rectangle width={"200px"} height={"35px"} text={4} />
-        {/* <Rectangle width={"200px"} height={"35px"} text={5} />
-        <Rectangle width={"200px"} height={"35px"} text={6} /> */}
+        <Rectangle text={1} />
+        <Rectangle text={2} />
+        <Rectangle text={3} />
+        <Rectangle text={4} />
+        {/* <Rectangle text={5} />
+        <Rectangle text={6} /> */}
       </div>
     </div>
   );

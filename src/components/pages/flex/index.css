@@ -17,7 +17,7 @@
     box-sizing: border-box;
     padding: 0.5rem;
     background-image: linear-gradient(to right, #242424, #161616);
-    min-height: 12rem;
+    min-height: 10rem;
 }
 
 .flex_main_codeblock {
