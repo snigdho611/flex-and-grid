@@ -74,27 +74,33 @@ const Flex = () => {
         display: "flex",
       }}>
         <span>Flex Wrap: </span>
-        <input
-          type="radio"
-          name="flex-wrap-wrap"
-          value={"wrap"}
-          checked={flexWrap.flexWrap === "wrap"}
-          onChange={(e) => setFlexWrap((prevState) => ({ ...prevState, flexWrap: e.target.value }))}
-        /> wrap;
-        <input
-          type="radio"
-          name="flex-wrap-wrap"
-          value={"nowrap"}
-          checked={flexWrap.flexWrap === "nowrap"}
-          onChange={(e) => setFlexWrap((prevState) => ({ ...prevState, flexWrap: e.target.value }))}
-        /> nowrap;
-        <input
-          type="radio"
-          name="flex-wrap-wrap"
-          value={"wrap-reverse"}
-          checked={flexWrap.flexWrap === "wrap-reverse"}
-          onChange={(e) => setFlexWrap((prevState) => ({ ...prevState, flexWrap: e.target.value }))}
-        /> wrap-reverse;
+        <span>
+          <input
+            type="radio"
+            name="flex-wrap-wrap"
+            value={"wrap"}
+            checked={flexWrap.flexWrap === "wrap"}
+            onChange={(e) => setFlexWrap((prevState) => ({ ...prevState, flexWrap: e.target.value }))}
+          /> wrap;
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="flex-wrap-wrap"
+            value={"nowrap"}
+            checked={flexWrap.flexWrap === "nowrap"}
+            onChange={(e) => setFlexWrap((prevState) => ({ ...prevState, flexWrap: e.target.value }))}
+          /> nowrap;
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="flex-wrap-wrap"
+            value={"wrap-reverse"}
+            checked={flexWrap.flexWrap === "wrap-reverse"}
+            onChange={(e) => setFlexWrap((prevState) => ({ ...prevState, flexWrap: e.target.value }))}
+          /> wrap-reverse;
+        </span>
       </div>
       <div className="flex_main_input" style={{
         display: "flex",
@@ -249,39 +255,13 @@ const Flex = () => {
 
       {/* JUSTIFY CONTENT */}
       <h2 className="flex_main_header">Justify Content</h2>
-      {/* <div className="flex_main_input" style={{
-        display: "flex",
-      }}>
-        <span>Flex Wrap: </span>
-        <input
-          type="radio"
-          name="justify-content-wrap"
-          value={"wrap"}
-          checked={justifyContent.flexWrap === "wrap"}
-          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, flexWrap: e.target.value }))}
-        /> wrap;
-        <input
-          type="radio"
-          name="justify-content-wrap"
-          value={"nowrap"}
-          checked={justifyContent.flexWrap === "nowrap"}
-          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, flexWrap: e.target.value }))}
-        /> nowrap;
-        <input
-          type="radio"
-          name="justify-content-wrap"
-          value={"wrap-reverse"}
-          checked={justifyContent.flexWrap === "wrap-reverse"}
-          onChange={(e) => setJustifyContent((prevState) => ({ ...prevState, flexWrap: e.target.value }))}
-        /> wrap-reverse;
-      </div> */}
       <div className="flex_main_input" style={{
         display: "flex",
         flexWrap: "wrap"
       }}>
         <span>Justify Content: </span>
         <span style={{ display: "grid", gridTemplate: "1.5rem 1.5rem 1.5rem 1.5rem / 33% 33% 33%", width: "100%" }}>
-          <span>
+          <span style={{ display: "flex", alignItems: "center" }}>
             <input
               type="radio"
               name="justify-content-justify-content"
