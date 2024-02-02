@@ -1,0 +1,27 @@
+.main {
+    background-color: #3a0049;
+    display: grid;
+    min-width: 550px;
+    width: 650px;
+    grid-template-rows: repeat(6, 40px max-content);
+    grid-template-columns: 40px 1fr;
+    font-size: 14px;
+}
+
+.row-1 {
+    grid-column: span 2;
+    display: flex;
+    position: relative;
+    padding-left: 30px;
+}
+
+.row-2 {
+    display: flex;
+}
+
+.row-3 {
+    grid-column: span 2;
+    display: flex;
+    position: relative;
+    padding-left: 30px;
+}

@@ -1,0 +1,37 @@
+.blockHL {
+    transform: skewX(45deg);
+    min-width: 80px;
+    background-color: #7800aa;
+    outline: 3px solid #3a0049;
+}
+
+.blockHR {
+    transform: skew(-45deg);
+    min-width: 80px;
+    background-color: #7800aa;
+    outline: 3px solid #3a0049;
+}
+
+.blockVR {
+    position: relative;
+    top: -14px;
+    min-height: 80px;
+    height: 20%;
+    width: 40px;
+    background-color: #7800aa;
+    transform: skew(0deg, 45deg);
+    outline: 3px solid #3a0049;
+}
+
+.blockVRLong {
+    position: relative;
+    height: 100px;
+}
+
+.blockVRLong_container {
+    @extend .blockVR;
+    position: absolute;
+    height: 110px;
+    top: -11px;
+    transform: perspective(12.85px) rotateY(13.5deg) scaleX(1.6);
+}
